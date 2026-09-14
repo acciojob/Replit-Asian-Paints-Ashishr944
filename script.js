@@ -1,4 +1,5 @@
 const blocks = document.querySelectorAll(".grid-box");
+
 const blockId = document.getElementById("block_id");
 const colourId = document.getElementById("colour_id");
 const changeButton = document.getElementById("change_button");
@@ -12,7 +13,7 @@ changeButton.addEventListener("click", function () {
     const id = parseInt(blockId.value);
 
     if (id >= 1 && id <= 9) {
-        blocks[id - 1].style.backgroundColor = colourId.value;
+        document.getElementById("grid-item").style.backgroundColor = colourId.value;
     }
 });
 
