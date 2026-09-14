@@ -6,6 +6,7 @@ const changeButton = document.getElementById("change_button");
 const resetButton = document.getElementById("Reset");
 
 changeButton.addEventListener("click", function () {
+    // Reset all blocks first
     blocks.forEach(function (block) {
         block.style.backgroundColor = "transparent";
     });
@@ -13,7 +14,13 @@ changeButton.addEventListener("click", function () {
     const id = parseInt(blockId.value);
 
     if (id >= 1 && id <= 9) {
-        document.getElementById("grid-item").style.backgroundColor = colourId.value;
+        const selectedBlock = document.querySelector(
+            '#grid-container .grid-box:nth-child(' + id + ')'
+        );
+
+        if (selectedBlock) {
+            selectedBlock.style.backgroundColor = colourId.value;
+        }
     }
 });
 
